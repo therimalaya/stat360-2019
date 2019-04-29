@@ -216,7 +216,7 @@ set.seed(777)
 design <- crossing(
   gamma = c(0.1, 1.2),
   relpos = list(1:5, 5:10),
-  Method = c("PCR", "PLS"),
+  # Method = c("PCR", "PLS"),
   Replication = 1:10
 )
 sim_obj <- design %>% 
@@ -230,26 +230,32 @@ sim_obj <- design %>%
     R2 = 0.8,
     ntest = 50,
     type = "univariate"
-  )))
+  ))) %>% 
+  mutate(Method = list(c("PCR", "PLS"))) %>% 
+  unnest(Method, .preserve = c(sobj))
 ```
 
 ```{r design_print}
 design %>% 
-  select(gamma, relpos, Method) %>% 
+  select(gamma, relpos) %>% 
   unique() %>% 
-  mutate(Design = rep(paste("Design", 1:4), 2)) %>% 
+  mutate(Design = rep(paste("Design", 1:4), 1)) %>% 
   mutate(relpos = map_chr(relpos, deparse)) %>%
-  select(Design, gamma, relpos, Method) %>% 
+  select(Design, gamma, relpos) %>% 
   as.data.frame()
 ```
 
 ![](_images/gamma-animation.gif)
 
+```{r}
+bind_cols(as.list(sim_obj$sobj[[1]]$call)[-c(1, 5, 6, 8)])
+```
+
+
 ]
 
 .right-column[
 ## Relevant Components
-### Low Multicollinearity
 
 ```{r}
 sobj_low <- sim_obj %>% 
@@ -260,19 +266,21 @@ sobj_low <- sim_obj %>%
 ```
 
 ```{r, fig.asp=0.7, fig.width=8}
-mklbl <- function(txt) {
-  textGrob(txt, gp = gpar(cex = 1.4, lineheight = 2, fontface = "bold"))
+mklbl <- function(txt, face = "bold") {
+  textGrob(txt, gp = gpar(cex = 1.4, lineheight = 2, fontface = face))
 }
 plt11 <- plot_simrel(sobj_low, which = 2, use_population = TRUE)
 plt12 <- plot_simrel(sobj_low, which = 4, use_population = TRUE) +
   labs(y = NULL)
-plt1_ <- arrangeGrob(plt11, plt12, top = mklbl("Population"), nrow = 1)
+plt1_ <- arrangeGrob(plt11, plt12, top = mklbl("Population", "italic"), nrow = 1)
 
 plt21 <- plot_simrel(sobj_low, which = 3, use_population = FALSE)
 plt22 <- plot_simrel(sobj_low, which = 4, use_population = FALSE) +
   labs(y = NULL)
-plt2_ <- arrangeGrob(plt21, plt22, top = mklbl("Sample"), nrow = 1)
-grid.draw(arrangeGrob(plt1_, plt2_, nrow = 2))
+plt2_ <- arrangeGrob(plt21, plt22, top = mklbl("Sample", "italic"), nrow = 1)
+grid.newpage()
+grid.draw(arrangeGrob(plt1_, plt2_, nrow = 2, 
+                      bottom = mklbl("Low Multicollinearity", "bold")))
 ```
 
 ]
@@ -289,34 +297,36 @@ class: top
 
 ![](_images/gamma-animation.gif)
 
+```{r}
+bind_cols(as.list(sim_obj$sobj[[1]]$call)[-c(1, 5, 6, 8)])
+```
+
+
 ]
 
 .right-column[
 ## Relevant Components
-### High Multicollinearity
 
 ```{r}
 sobj_high <- sim_obj %>% 
-  filter(gamma == 1.2, relpos_chr == "1:5") %>% 
+  filter(gamma == 1.2, relpos_chr == "5:10") %>% 
   slice(1) %>% 
   pluck("sobj") %>% 
   pluck(1)
 ```
 
 ```{r, fig.asp=0.7, fig.width=8}
-mklbl <- function(txt) {
-  textGrob(txt, gp = gpar(cex = 1.4, lineheight = 2, fontface = "bold"))
-}
 plt11 <- plot_simrel(sobj_high, which = 2, use_population = TRUE)
 plt12 <- plot_simrel(sobj_high, which = 4, use_population = TRUE) +
   labs(y = NULL)
-plt1_ <- arrangeGrob(plt11, plt12, top = mklbl("Population"), nrow = 1)
+plt1_ <- arrangeGrob(plt11, plt12, top = mklbl("Population", "italic"), nrow = 1)
 
 plt21 <- plot_simrel(sobj_high, which = 3, use_population = FALSE)
 plt22 <- plot_simrel(sobj_high, which = 4, use_population = FALSE) +
   labs(y = NULL)
-plt2_ <- arrangeGrob(plt21, plt22, top = mklbl("Sample"), nrow = 1)
-grid.draw(arrangeGrob(plt1_, plt2_, nrow = 2))
+plt2_ <- arrangeGrob(plt21, plt22, top = mklbl("Sample", "italic"), nrow = 1)
+grid.newpage()
+grid.draw(arrangeGrob(plt1_, plt2_, nrow = 2, bottom = mklbl("High Multicollinearity", "bold")))
 ```
 
 ]
@@ -479,6 +489,7 @@ class: top
 ## Partial Least Square Regression
 
 ]
+
 .right-column[
 
 ```{r, fig.asp=0.7, fig.width=7, out.width='100%'}
@@ -493,7 +504,7 @@ class: top
 
 .left-40-column[
 
-## Error Comparison
+# Error Comparison
 
 ```{r}
 min_cv_err <- err_df %>%
@@ -515,7 +526,6 @@ min_err <- inner_join(min_cv_err, min_test_err) %>%
   rename(Component = Model)
 ```
 
-
 ```{r}
 dbl2df <- function(x, name = NULL) {
   df <- data.frame(obs = seq_along(x), value = x)
@@ -530,7 +540,7 @@ pred_df <- err %>%
   mutate(PredY = pmap(list(sobj, fit, Component), function(x, y, z) {
     predict(y, newdata = x$TESTX, ncomp = z) %>% drop()
   })) %>% 
-  mutate(Method = paste0(Method, ":", Component)) %>% 
+  # mutate(Method = paste0(Method, ":", Component)) %>% 
   select(gamma:Replication, TrueY, PredY) %>% 
   mutate(TrueY = map(TrueY, dbl2df, "True")) %>% 
   mutate(PredY = map(PredY, dbl2df, "Pred"))
@@ -541,51 +551,8 @@ pred_df_ <- inner_join(
   pred_df %>% unnest(TrueY),
   pred_df %>% unnest(PredY),
   by = c("gamma", "relpos", "Method", "Replication", "obs")
-) %>% 
-  gather(Type, value, True:Pred)
+)
 ```
-
-```{r, fig.asp=0.6}
-plt1 <- pred_df_ %>% filter(grepl("PCR", Method)) %>% 
-  ggplot(aes(obs, value, color = Type)) +
-  stat_summary(fun.y = mean, geom = "point") +
-  stat_summary(fun.y = mean, geom = "line", aes(group = Type)) +
-  stat_summary(fun.data = mean_se, geom = "ribbon", alpha = 0.2, aes(fill = Type),
-               color = NA) +
-  facet_wrap(relpos ~ gamma, labeller = label_both) +
-  scale_y_continuous(breaks = seq(-1, 1, 0.5)) +
-  coord_cartesian(ylim = c(-1, 1)) +
-  expand_limits(y = c(-1, 1)) +
-  labs(x = "Observations",
-       y = "Response (Y)",
-       title = "Predictions using PCR")
-```
-
-```{r, fig.asp=0.6}
-plt2 <- pred_df_ %>% filter(grepl("PLS", Method)) %>% 
-  ggplot(aes(obs, value, color = Type)) +
-  stat_summary(fun.y = mean, geom = "point") +
-  stat_summary(fun.y = mean, geom = "line", aes(group = Type)) +
-  stat_summary(fun.data = mean_se, geom = "ribbon", alpha = 0.2, aes(fill = Type),
-               color = NA) +
-  facet_wrap(relpos ~ gamma, labeller = label_both) +
-  scale_y_continuous(breaks = seq(-1, 1, 0.5)) +
-  coord_cartesian(ylim = c(-1, 1)) +
-  expand_limits(y = c(-1, 1)) +
-  labs(x = "Observations",
-       y = "Response (Y)",
-       title = "Predictions using PLS")
-```
-
-```{r, fig.asp=1.2}
-ggpubr::ggarrange(plt1, plt2, nrow = 2, legend = "bottom", common.legend = TRUE)
-```
-
-
-]
-.right-60-column[
-
-### Estimation and Prediction Error
 
 ```{r}
 est_err <- err %>% 
@@ -603,22 +570,15 @@ est_err <- err %>%
 ```{r}
 err_print <- est_err %>% 
   group_by(gamma, relpos, Method) %>% 
-  summarize(EstErr = mean(est_err),
+  summarize(RMSEE = sqrt(mean(est_err)),
             Model = unique(Component)) %>% 
-  inner_join(min_cv_err) %>% 
-  rownames_to_column(var = "Design") %>% 
+  inner_join(min_test_err) %>% 
+  bind_cols(Design = rep(1:4, each = 2)) %>% 
   rename(Component = Model) %>% 
-  select(Design:Method, Component, EstErr, RMSECV)
-knitr::kable(err_print, format = "html") %>% 
-  kableExtra::kable_styling(
-    full_width = TRUE, 
-    font_size = 10,
-    bootstrap_options = "condensed") %>% 
-  kableExtra::row_spec(0:8, monospace = TRUE)
+  select(Design, gamma:Method, Component, RMSEE, RMSEP)
 ```
 
-
-```{r, fig.asp=0.6}
+```{r, fig.asp=0.65, fig.width=5}
 est_err %>% 
   group_by(gamma, relpos, Method) %>% 
   summarize(EstErr = mean(est_err),
@@ -628,14 +588,63 @@ est_err %>%
   ggplot(aes(factor(gamma), Value, color = Method)) +
   geom_line(aes(group = Method)) +
   geom_point() +
-  facet_grid(relpos ~ Error_Type, scales = "free_y",
+  ggrepel::geom_text_repel(aes(label = Model)) +
+  facet_grid(Error_Type ~ relpos, scales = "free_y",
              labeller = label_both) +
   labs(x = "Multicollinearity Decay Factor",
        y = "Error") +
   theme(legend.position = "bottom")
 ```
 
+```{r}
+knitr::kable(err_print, format = "html") %>% 
+  kableExtra::kable_styling(
+    full_width = TRUE, 
+    font_size = 10,
+    bootstrap_options = "condensed") %>% 
+  kableExtra::row_spec(0:8, monospace = TRUE)
+```
 
+]
+.right-60-column[
+
+## Estimation and Prediction Error
+
+```{r, fig.asp=0.7, fig.width = 8}
+pred_df_ %>% 
+  spread(Method, Pred) %>% 
+  gather(Type, value, True:PLS) %>% 
+  ggplot(aes(obs, value, color = Type)) +
+  facet_grid(relpos ~ gamma, labeller = label_both) +
+  stat_summary(fun.y = mean, geom = "point", shape = 23, 
+               size = 1, fill = "lightgrey") +
+  stat_summary(fun.y = mean, geom = "line", aes(group = Type)) +
+  scale_y_continuous(breaks = seq(-1, 1, 0.5)) +
+  coord_cartesian(ylim = c(-1, 1)) +
+  expand_limits(y = c(-1, 1)) +
+  labs(x = "Observations",
+       y = "Response (Y)",
+       color = NULL,
+       fill = NULL,
+       title = "Predictions of Test Observations",
+       subtitle = "Using PLS, PCR and compared with true values") +
+  theme(legend.position = "bottom")
+```
+
+.flex-box[
+.error-box[
+
+*Prediction Error:*
+$$\mathsf{E}\left[(\beta - \hat{\beta})^t (X_\circ X_\circ^t)^{-1} (\beta - \hat{\beta})\right]$$
+
+]
+.error-box[
+
+*Estimation Error:*
+$$\mathsf{E}\left[(\beta - \hat{\beta})^t (\beta - \hat{\beta})\right]$$
+
+]
+]
 ]
 
 ---

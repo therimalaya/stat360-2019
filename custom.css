@@ -92,12 +92,12 @@ summary{
   line-height: 150%;
   width: 90%;
 }
-#birthweight-example~p{
-  width: 50%;
-  float: left;
+.error-box {
+  text-align: center;
+  font-size: smaller;
 }
-#birthweight-example{
-  flex: 1;
+.error-box p{
+  margin-top: 0;
 }
 .right-60-column{
   width: 60%;
