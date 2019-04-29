@@ -1,18 +1,20 @@
 ---
 title: "Analyzing the effect of multicollinearity and position of relevant components"
-subtitle: ""
+subtitle: "<small>STAT 360, 2019</small>"
 author: "Raju Rimal"
 date: "`r format(Sys.Date(), '%b %d, %Y')`"
 output:
   xaringan::moon_reader:
+    css: ['_style/default.css', '_style/default-fonts.css', '_style/custom.css']
     self_content: false
     includes:
       in_header: "header.html"
       after_body: "footer.html"
-    lib_dir: libs
+    lib_dir: 'libs'
     chakra: 'libs/remark-latest.min.js'
+    mathjax: null
     nature:
-      mathjax: 'libs/Mathjax/Mathjax.js?config=TeX-AMS-MML_HTMLorMML'
+      # mathjax: 'libs/MathJax/MathJax.js'
       ratio: 16:10
       highlightStyle: github
       highlightLines: true

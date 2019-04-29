@@ -4,16 +4,18 @@
     <title>Analyzing the effect of multicollinearity and position of relevant components</title>
     <meta charset="utf-8">
     <meta name="author" content="Raju Rimal" />
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
-    <link rel="stylesheet" href="custom.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="_style/custom.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="_style/default.css" type="text/css" />
+    <link rel="stylesheet" href="_style/default-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="_style/custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 # Analyzing the effect of multicollinearity and position of relevant components
+## <small>STAT 360, 2019</small>
 ### Raju Rimal
 ### Apr 29, 2019
 
@@ -624,7 +626,6 @@ background-repeat: no-repeat
     </textarea>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"mathjax": "libs/Mathjax/Mathjax.js?config=TeX-AMS-MML_HTMLorMML",
 "ratio": "16:10",
 "highlightStyle": "github",
 "highlightLines": true,
@@ -640,11 +641,8 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
 })();</script>
-<script src="libs/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="script.js" type="text/javascript" charset="utf-8"></script>
-
 <script>
-(function() {
+  (function() {
   var i, text, code, codes = document.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
@@ -660,17 +658,20 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     i++;
   }
 })();
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+
+
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'libs/MathJax/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
 })();
+
 </script>
+<script src="libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="script.js" type="text/javascript" charset="utf-8"></script>
+
   </body>
 </html>
