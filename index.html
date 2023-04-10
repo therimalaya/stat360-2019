@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="" xml:lang="">
   <head>
     <title>Analyzing the effect of multicollinearity and position of relevant components</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="author" content="Raju Rimal" />
-    <script src="libs/kePrint/kePrint.js"></script>
-    <!-- <link rel="stylesheet" href="_style/custom.css" type="text/css" media="all" /> -->
+    <meta name="date" content="2023-04-10" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <script src="index_files/kePrint/kePrint.js"></script>
+    <link href="index_files/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="_style/default.css" type="text/css" />
     <link rel="stylesheet" href="_style/default-fonts.css" type="text/css" />
     <link rel="stylesheet" href="_style/custom.css" type="text/css" />
@@ -14,10 +16,18 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Analyzing the effect of multicollinearity and position of relevant components
+]
+.subtitle[
 ## <small>STAT 360, 2019</small>
+]
+.author[
 ### Raju Rimal
-### Apr 29, 2019
+]
+.date[
+### april 10, 2023
+]
 
 ---
 
@@ -157,7 +167,7 @@ class: top
 
 
 ```
-# A tibble: 1 x 5
+# A tibble: 1 × 5
       n     p     q    R2 ntest
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 1    20    30    30   0.8    50
@@ -195,7 +205,7 @@ class: top
 
 
 ```
-# A tibble: 1 x 5
+# A tibble: 1 × 5
       n     p     q    R2 ntest
   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 1    20    30    30   0.8    50
@@ -250,7 +260,7 @@ exclude: false
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.2 &lt;/th&gt;
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.3 &lt;/th&gt;
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.4 &lt;/th&gt;
-   &lt;th style="text-align:left;font-family: monospace;"&gt; ... &lt;/th&gt;
+   &lt;th style="text-align:left;font-family: monospace;"&gt; ...6 &lt;/th&gt;
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.27 &lt;/th&gt;
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.28 &lt;/th&gt;
    &lt;th style="text-align:right;font-family: monospace;"&gt; x.29 &lt;/th&gt;
@@ -259,124 +269,124 @@ exclude: false
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.336 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.113 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.022 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.086 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.119 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -1.162 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.234 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.017 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.242 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.033 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.096 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.150 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.019 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.103 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.054 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.013 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.090 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.015 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -1.041 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.164 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.053 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.043 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.079 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.395 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.173 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.092 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.015 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.167 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.068 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.100 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.070 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.072 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.306 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.124 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.095 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 1.701 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.140 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.144 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.481 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.021 &lt;/td&gt;
+   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.176 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.360 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.210 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.089 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.849 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.117 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.011 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.229 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; -0.102 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.934 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.028 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.149 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.081 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.185 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.077 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.554 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.100 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.195 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.061 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.030 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.020 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.005 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.142 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.029 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.139 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.065 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.171 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -1.158 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.002 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.046 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.282 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.002 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.061 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.527 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.126 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.189 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.538 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.002 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.202 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 0.082 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.198 &lt;/td&gt;
-   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.051 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.630 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.230 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.208 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -1.134 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.057 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.112 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.061 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.138 &lt;/td&gt;
-   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.095 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.087 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.081 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.047 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.751 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.080 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.028 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.218 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.144 &lt;/td&gt;
-   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.317 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.063 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.141 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.066 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.157 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.137 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.049 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.012 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.036 &lt;/td&gt;
-   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.048 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.133 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.057 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.075 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.770 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.083 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.044 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.130 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.003 &lt;/td&gt;
-   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; -0.195 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.129 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.016 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.009 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.084 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.015 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.966 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.184 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.024 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.198 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.199 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 1.547 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.219 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.016 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.543 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.025 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.146 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.254 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.168 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.259 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.228 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.079 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.782 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.223 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.026 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.370 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.056 &lt;/td&gt;
+   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.073 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.115 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.190 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.052 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.671 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.052 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.120 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.097 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.064 &lt;/td&gt;
+   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.111 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.193 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 0.065 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.199 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.049 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.984 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.420 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.091 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.355 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.327 &lt;/td&gt;
+   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.023 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.182 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.002 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.083 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.179 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.002 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.078 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.153 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.082 &lt;/td&gt;
+   &lt;td style="text-align:left;font-family: monospace;"&gt; ... &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.114 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.135 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; -0.072 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.040 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -461,8 +471,8 @@ class: top
    &lt;td style="text-align:left;font-family: monospace;"&gt; 1:5 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PCR &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 12 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.735 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.681 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.670 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.628 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 1 &lt;/td&gt;
@@ -470,26 +480,26 @@ class: top
    &lt;td style="text-align:left;font-family: monospace;"&gt; 1:5 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PLS &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.751 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.678 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.682 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.622 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 2 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 0.1 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; 5:10 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PCR &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 11 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.916 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.762 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.973 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.728 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 2 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 0.1 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; 5:10 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PLS &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.883 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.750 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 1.000 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.723 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 3 &lt;/td&gt;
@@ -497,8 +507,8 @@ class: top
    &lt;td style="text-align:left;font-family: monospace;"&gt; 1:5 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PCR &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 1.531 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.546 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 1.501 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.512 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 3 &lt;/td&gt;
@@ -506,8 +516,8 @@ class: top
    &lt;td style="text-align:left;font-family: monospace;"&gt; 1:5 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PLS &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 2.019 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.545 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 2.399 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.513 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 4 &lt;/td&gt;
@@ -515,17 +525,17 @@ class: top
    &lt;td style="text-align:left;font-family: monospace;"&gt; 5:10 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PCR &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 10 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 46.107 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.641 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 53.366 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.663 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 4 &lt;/td&gt;
    &lt;td style="text-align:right;font-family: monospace;"&gt; 1.2 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; 5:10 &lt;/td&gt;
    &lt;td style="text-align:left;font-family: monospace;"&gt; PLS &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 54.410 &lt;/td&gt;
-   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.682 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 63.169 &lt;/td&gt;
+   &lt;td style="text-align:right;font-family: monospace;"&gt; 0.683 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -563,25 +573,25 @@ class: top
 
 
 Almøy, T. (1996). "A simulation study on comparison of prediction
-methods when only a few components are relevant". In:
-_Computational Statistics &amp; Data Analysis_ 21.1, pp. 87-107. DOI:
-[10.1016/0167-9473(95)00006-2](https://doi.org/10.1016/0167-9473(95)00006-2).
+methods when only a few components are relevant". In: _Computational
+Statistics &amp; Data Analysis_ 21.1, pp. 87-107. DOI:
+[10.1016/0167-9473(95)00006-2](https://doi.org/10.1016%2F0167-9473%2895%2900006-2).
 URL:
 [https://doi.org/10.1016/0167-9473(95)00006-2](https://doi.org/10.1016/0167-9473(95)00006-2).
 
-Helland, I. S. and T. Almøy (1994). "Comparison of prediction
-methods when only a few components are relevant". In: _Journal of
-the American Statistical Association_ 89.426, pp. 583-591.
+Helland, I. S. and T. Almøy (1994). "Comparison of prediction methods
+when only a few components are relevant". In: _Journal of the American
+Statistical Association_ 89.426, pp. 583-591.
 
-Helland, I. S, S. Sæbø, T. Almøy, et al. "Model and estimators for
-partial least squares regression". In: _Journal of Chemometrics_,
-p. e3044.
+Helland, I. S., S. Sæbø, T. Almøy, et al. "Model and estimators for
+partial least squares regression". In: _Journal of Chemometrics_, p.
+e3044.
 
-Rimal, R, T. Almøy and S. Sæbø (2018). "A tool for simulating
-multi-response linear model data". In: _Chemometrics and
-Intelligent Laboratory Systems_ 176, pp. 1-10.
+Rimal, R., T. Almøy, and S. Sæbø (2018). "A tool for simulating
+multi-response linear model data". In: _Chemometrics and Intelligent
+Laboratory Systems_ 176, pp. 1-10.
 
-Sæbø, S, T. Almøy and I. S. Helland (2015). "simrel - A versatile
+Sæbø, S., T. Almøy, and I. S. Helland (2015). "simrel - A versatile
 tool for linear model data simulation based on the concept of a
 relevant subspace and relevant predictors". In: _Chemometrics and
 Intelligent Laboratory Systems_.
@@ -623,27 +633,116 @@ background-image: url(_images/ThankYou.png)
 background-size: cover
 background-position: center
 background-repeat: no-repeat
+
     </textarea>
-<script src="libs/remark-latest.min.js"></script>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "ratio": "16:10",
 "highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"slideNumberFormat": "<div class=\"progress-bar-container\">   <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">   </div> </div> "
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
-})();</script>
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
 <script>
-  (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -657,21 +756,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     i++;
   }
-})();
-
-
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'libs/MathJax/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
 })();
-
 </script>
-<script src="libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="script.js" type="text/javascript" charset="utf-8"></script>
-
   </body>
 </html>

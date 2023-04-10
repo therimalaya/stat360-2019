@@ -7,12 +7,12 @@ output:
   xaringan::moon_reader:
     css: ['_style/default.css', '_style/default-fonts.css', '_style/custom.css']
     self_content: false
-    includes:
-      in_header: "header.html"
-      after_body: "footer.html"
-    lib_dir: 'libs'
-    chakra: 'libs/remark-latest.min.js'
-    mathjax: null
+    # includes:
+    #   in_header: "header.html"
+    #   after_body: "footer.html"
+    # lib_dir: 'libs'
+    # chakra: 'libs/remark-latest.min.js'
+    # mathjax: true
     nature:
       # mathjax: 'libs/MathJax/MathJax.js'
       ratio: 16:10
@@ -45,7 +45,7 @@ knitr::knit_hooks$set(source = function(x, options) {
   hook_source(x, options)
 })
 ## Source the script file for creating relevant space
-source("_script/00-function.r")
+source("_script/00-function.R")
 source("_script/relevant-space.R")
 ## Load packages
 library(tidyverse)
@@ -614,11 +614,12 @@ knitr::kable(err_print, format = "html") %>%
 
 ```{r, fig.asp=0.7, fig.width = 8}
 pred_df_ %>% 
+  select(-c(PredY, TrueY)) %>%
   spread(Method, Pred) %>% 
   gather(Type, value, True:PLS) %>% 
   ggplot(aes(obs, value, color = Type)) +
   facet_grid(relpos ~ gamma, labeller = label_both) +
-  stat_summary(fun.y = mean, geom = "point", shape = 23, 
+  stat_summary(fun = mean, geom = "point", shape = 23, 
                size = 1, fill = "lightgrey") +
   stat_summary(fun.y = mean, geom = "line", aes(group = Type)) +
   scale_y_continuous(breaks = seq(-1, 1, 0.5)) +
